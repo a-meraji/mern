@@ -1,4 +1,5 @@
 {
+  "homepage": "https://a-meraji.github.io/mern",
   "name": "mern",
   "version": "0.1.0",
   "private": true,
@@ -21,7 +22,6 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "homepage": "https://a-meraji.github.io/mern",
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
