@@ -50,10 +50,10 @@ export default function Sidebar() {
       </FlexContainer>
 
       <FlexContainer height="70vh" padding="0">
-        <SideLink link="خانه" />
-        <SideLink link="دسته بندی ها" />
-        <SideLink link="درباره" />
-        <SideLink link="تماس" />
+        <SideLink con={setSideBar} link="/" linkName="خانه" />
+        <SideLink con={setSideBar} link="/courses/reactJS" linkName="دسته بندی ها" />
+        <SideLink con={setSideBar} link="/about" linkName="درباره" />
+        <SideLink con={setSideBar} link="/contact" linkName="تماس" />
       </FlexContainer>
 
       <FlexContainer height="15vh" direction="row">
@@ -80,7 +80,7 @@ export default function Sidebar() {
   );
 }
 
-const SideLink = ({ link }) => {
+const SideLink = ({ con,link, linkName }) => {
   const LiItem = styled(Div)`
   margin:0;
   width:100%;
@@ -95,9 +95,9 @@ const SideLink = ({ link }) => {
   }
   `;
   return (
-    <LiItem>
-      <Link style={{ "text-decoration": "none" }}>
-        <H4 color="var(--grey-bg)">{link}</H4>
+    <LiItem onClick={() => con(false)}>
+      <Link to={link} style={{ "text-decoration": "none" }}>
+        <H4 color="var(--grey-bg)">{linkName}</H4>
       </Link>
     </LiItem>
   );

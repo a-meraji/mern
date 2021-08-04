@@ -3,33 +3,11 @@ import { useGlobalContext } from "../context";
 import { useHistory } from "react-router-dom";
 import {
   Wrapper,
+  LogDiv,
   FlexContainer,
   Button,
 } from "../components/shared/components";
-import styled from "styled-components";
 
-const LogDiv = styled.div`
-  text-align: center;
-  width: 100%;
-  max-width: 285px;
-  margin: 2rem auto;
-
-  * {
-    text-align: right;
-    width: 100%;
-    max-width: 600px;
-  }
-
-  input {
-    text-align: right;
-    margin: 0.5rem 0 1.85rem;
-    padding: 0.5rem 1rem 0.5rem 0.5rem;
-    height: 30px;
-    border-radius: 38px;
-    border: none;
-    font-size: 1rem;
-  }
-`;
 
 export default function Log() {
   const { LogIn, LogOut } = useGlobalContext();
