@@ -62,7 +62,7 @@ export default function Download_Course() {
       bgColor={catColor}>
         <A
           target="_blank"
-          href="http://localhost:8080/dls/?section=video&file=The.Office.S02E01.720p.WEB-DL.mkv"
+          href="http://localhost:8080/dls/?section=video&file=sample_640x360.mkv"
           download
         >
           download video
