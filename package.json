@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
+    "ghpage": "^0.2.4",
     "jspdf": "^2.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -19,7 +20,10 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "homepage": "https://a-meraji.github.io/mern",
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
