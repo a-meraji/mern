@@ -55,7 +55,7 @@ export default function Download_Course() {
       >
         download pdf
       </Button>
-      <Button
+      {/* <Button
       width="max-content"
       margin="0.5rem"
       padding="0.5rem 0.85rem"
@@ -67,7 +67,7 @@ export default function Download_Course() {
         >
           download video
         </A>
-        </Button>
+        </Button> */}
       </FlexContainer>
     </Wrapper>
   );

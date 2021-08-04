@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import Categories from "../components/categories";
 import SingleCourse from "../components/single-course";
-import { react_courses } from "../data";
+import { allCourses } from "../data";
 import { Wrapper, FlexContainer } from "../components/shared/components";
 import { ScrollContainer } from "react-scroll-motion";
 
 export default function Courses() {
   const { cat: nameParams } = useParams();
-  const [course, setCourse] = useState(react_courses);
+  const [course, setCourse] = useState(allCourses['2']['reactJS']);
 
   useEffect(() => {
     getCourse(nameParams);
+    console.log(course['reactJS']);
   }, [nameParams]);
 
   const getCourse = (cat) => {
@@ -31,14 +31,7 @@ export default function Courses() {
         inx = 3;
         break;
     }
-    axios
-      .get(`http://localhost:8080/courses/${inx}`)
-      .then((res) => {
-        setCourse(res.data[`${cat}`]);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    setCourse(allCourses[`${inx}`][`${cat}`]);
   };
   return (
     <ScrollContainer>
