@@ -23,7 +23,7 @@ export default function Footer() {
   return (
     <Footer_Wrapper direction="column">
       <FlexContainer width="100vw" direction="row" justify="space-between">
-      <Link to="/" style={{"text-decoration":"none"}}>
+      <Link to={process.env.PUBLIC_URL + '/'} style={{"text-decoration":"none"}}>
         <H4 margin="0 2rem" color="var(--grey-bg)">
           MERN
         </H4>

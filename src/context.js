@@ -1,8 +1,10 @@
 import React, { useContext, useReducer, useState, useEffect } from "react";
-import Auth from './auth'
+import Auth from "./auth";
 const ContextObj = React.createContext();
 
 const ProviderFunction = ({ children }) => {
+  // dynamic home path
+  const [homePath, setHomePath] = useState(process.env.PUBLIC_URL + "/");
   // showing side baror not
   const [sideBar, setSideBar] = useState(false);
 
@@ -11,20 +13,20 @@ const ProviderFunction = ({ children }) => {
   const LogIn = () => {
     Auth.authenticate();
     setIsAuth(Auth.getAuth());
-  }
+  };
   const LogOut = () => {
     Auth.signout();
     setIsAuth(Auth.getAuth());
-  }
+  };
 
   //category color
   const [catColor, setCatColor] = useState("var(--react-blue)");
 
- 
   return (
     <ContextObj.Provider
       value={{
-          sideBar,
+        homePath,
+        sideBar,
         setSideBar,
         isAuth,
         LogIn,

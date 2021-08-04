@@ -11,10 +11,10 @@ import Contact from "../pages/contact";
 import NotFound from "../pages/404";
 
 export default function Router() {
-  const { isAuth } = useGlobalContext();
+  const { homePath, isAuth } = useGlobalContext();
   return (
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route exact path= {homePath} component={Home} />
       <Route path="/courses/:cat" component={Courses} />
       <Route path="/auth" component={Log} />
       <PrivateRoute

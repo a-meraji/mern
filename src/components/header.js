@@ -22,7 +22,7 @@ const Logo = styled(H2)`
   text-shadow: 0 0 2px #555, 0 0 5px #fff;
 `;
 const Header = () => {
-  const { setSideBar } = useGlobalContext();
+  const { homePath, setSideBar } = useGlobalContext();
   const [scrolled, setScrolled] = useState(false)
 
   const handleScrolling = () => {
@@ -39,7 +39,7 @@ const Header = () => {
       <Button onClick={() =>{setSideBar(true)}} style={{ "font-size": "20px" }}>
         <CgDetailsLess />
       </Button>
-      <Link to="/" style={{ "text-decoration": "none" }}>
+      <Link to={homePath} style={{ "text-decoration": "none" }}>
         <Logo>MERN</Logo>
       </Link>
       <Link to='/auth'>

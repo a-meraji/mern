@@ -31,7 +31,7 @@ const SideDiv = styled(Div)`
 `;
 
 export default function Sidebar() {
-  const { sideBar, setSideBar } = useGlobalContext();
+  const { homePath, sideBar, setSideBar } = useGlobalContext();
   return (
     <SideDiv translate={`${sideBar ? "translate(0)" : "translate(-100%)"}`}>
       <FlexContainer height="15vh">
@@ -50,7 +50,7 @@ export default function Sidebar() {
       </FlexContainer>
 
       <FlexContainer height="70vh" padding="0">
-        <SideLink con={setSideBar} link="/" linkName="خانه" />
+        <SideLink con={setSideBar} link={homePath} linkName="خانه" />
         <SideLink con={setSideBar} link="/courses/reactJS" linkName="دسته بندی ها" />
         <SideLink con={setSideBar} link="/about" linkName="درباره" />
         <SideLink con={setSideBar} link="/contact" linkName="تماس" />
