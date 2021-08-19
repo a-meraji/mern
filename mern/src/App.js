@@ -33,9 +33,9 @@ const GlobalStyle = createGlobalStyle`
 
 @font-face{
   font-family: Vazir-Reg;
-  src:url('./assets/fonts/Vazir-Regular-FD.eot') format('eot'),
-  url('./assets/fonts/Vazir-Regular-FD.woff') format('woff'),
-  url('./assets/fonts/Vazir-Regular-FD.ttf') format('truetype');
+  src:url('${process.env.PUBLIC_URL}/assets/fonts/Vazir-Regular-FD.eot') format('eot'),
+  url('${process.env.PUBLIC_URL}/assets/fonts/Vazir-Regular-FD.woff') format('woff'),
+  url('${process.env.PUBLIC_URL}/assets/fonts/Vazir-Regular-FD.ttf') format('truetype');
 }
 
 body {

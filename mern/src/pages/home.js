@@ -87,7 +87,7 @@ function Home() {
                   height="auto"
                   borderRadius="0"
                   margin="1rem 0"
-                  src="./assets/images/shuttle.png"
+                  src={`${process.env.PUBLIC_URL}/assets/images/shuttle.png`}
                   alt="shuttle"
                   style={{ transform: `translateY(${value.y}px)` }}
                 ></Circle_Img>
