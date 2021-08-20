@@ -15,14 +15,12 @@ app.use(express.json());
 app.use(cookieParser());
 
 // to serve react app
-if (process.env.NODE_ENV === 'production') {
     // Serve any static files
     app.use(express.static(path.join(__dirname, 'mern/build')));
   // Handle React routing, return all requests to React app
     app.get('*', function(req, res) {
       res.sendFile(path.join(__dirname, 'mern/build', 'index.html'));
     });
-  }
 
 //database connection
 const dbURI = 
