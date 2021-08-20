@@ -10,23 +10,9 @@ const PORT = process.env.PORT || 80;
 const app = express();
 
 //middlewares
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
-
-const whitelist = ['http://localhost:3000', 'http://localhost:80', 'https://mylearn-mernstack.herokuapp.com/'];
-const corsOptions = {
-  origin: function (origin, callback) {
-    console.log("** Origin of request " + origin)
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      console.log("Origin acceptable")
-      callback(null, true)
-    } else {
-      console.log("Origin rejected")
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
-}
-app.use(cors(corsOptions));
 
 // to serve react app
 if (process.env.NODE_ENV === 'production') {
