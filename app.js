@@ -11,9 +11,9 @@ const PORT = 80;
 const app = express();
 
 //middlewares
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
 
 // to serve react app
 if (process.env.NODE_ENV === 'production') {
