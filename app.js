@@ -26,18 +26,18 @@ if (process.env.NODE_ENV === 'production') {
   }
 
 //database connection
-const dbURI = 
-"mongodb+srv://amin:mernstack@cluster0.3skt2.mongodb.net/node-auth";
-mongoose.connect(dbURI,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-})
-.then((result) => app.listen(PORT))
-.catch((err) => {
-    console.log(err);
-    app.listen(PORT)
-});
-
+// const dbURI = 
+// "mongodb+srv://amin:mernstack@cluster0.3skt2.mongodb.net/node-auth";
+// mongoose.connect(dbURI,{
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useCreateIndex: true,
+// })
+// .then((result) => app.listen(PORT))
+// .catch((err) => {
+//     console.log(err);
+//     app.listen(PORT)
+// });
+app.listen(PORT);
 //routes
 app.use(authRoutes);
