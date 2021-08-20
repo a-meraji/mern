@@ -6,7 +6,7 @@ const  cors = require("cors");
 const authRoutes = require("./routes/authRoutes");
 //const  allCourses = require("./data.js");
 
-const PORT = 80;
+const PORT = process.env.PORT || 80;
 
 const app = express();
 
@@ -26,18 +26,18 @@ if (process.env.NODE_ENV === 'production') {
   }
 
 //database connection
-// const dbURI = 
-// "mongodb+srv://amin:mernstack@cluster0.3skt2.mongodb.net/node-auth";
-// mongoose.connect(dbURI,{
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useCreateIndex: true,
-// })
-// .then((result) => app.listen(PORT))
-// .catch((err) => {
-//     console.log(err);
-//     app.listen(PORT)
-// });
-app.listen(PORT);
+const dbURI = 
+"mongodb+srv://amin:mernstack@cluster0.3skt2.mongodb.net/node-auth";
+mongoose.connect(process.env.MONGODB_URI || dbURI,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+})
+.then((result) => app.listen(PORT))
+.catch((err) => {
+    console.log(err);
+    app.listen(PORT)
+});
+
 //routes
 app.use(authRoutes);
