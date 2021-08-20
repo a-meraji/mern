@@ -4,7 +4,6 @@ const  cookieParser = require("cookie-parser");
 const  path = require("path");
 const  cors = require("cors");
 const authRoutes = require("./routes/authRoutes");
-require("dotenv").config();
 
 const PORT = process.env.PORT || 80;
 
@@ -25,17 +24,19 @@ if (process.env.NODE_ENV === 'production') {
     });
   }
 
+//database connection
+const dbURI = 
+"mongodb+srv://amin:mernstack@cluster0.3skt2.mongodb.net/node-auth";
+mongoose.connect(dbURI,{
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+})
+.then((result) => {app.listen(PORT); console.log(`resver run on ${PORT}`)})
+.catch((err) => {
+  console.log(err);
+  app.listen(PORT)
+});
+
 //routes
 app.use(authRoutes);
-
-//database connection
-mongoose.connect(process.env.MONGODB_CONNECTION_STRING,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-})
-.then((result) => app.listen(PORT))
-.catch((err) => {
-    console.log(err);
-    app.listen(PORT)
-});
