@@ -13,7 +13,6 @@ const ProviderFunction = ({ children }) => {
   const checkAuth = async()=>{
     try{
       const res = await fetch('/checkauth');
-      //process.env.REACT_APP_LOGIN
       const data = await res.json();
       if(data.isValid){
         setIsAuth(true);

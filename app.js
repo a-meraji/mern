@@ -4,7 +4,6 @@ const  cookieParser = require("cookie-parser");
 const  path = require("path");
 const  cors = require("cors");
 const authRoutes = require("./routes/authRoutes");
-//const  allCourses = require("./data.js");
 
 const PORT = process.env.PORT || 80;
 
@@ -25,6 +24,9 @@ if (process.env.NODE_ENV === 'production') {
     });
   }
 
+//routes
+app.use(authRoutes);
+
 //database connection
 const dbURI = 
 "mongodb+srv://amin:mernstack@cluster0.3skt2.mongodb.net/node-auth";
@@ -38,6 +40,3 @@ mongoose.connect(process.env.MONGODB_URI || dbURI,{
     console.log(err);
     app.listen(PORT)
 });
-
-//routes
-app.use(authRoutes);

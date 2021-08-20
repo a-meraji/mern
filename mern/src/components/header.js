@@ -37,7 +37,7 @@ const Header = () => {
 
   const logOut =  async() => {
     try {
-      const res = await fetch(process.env.REACT_APP_LOGOUT);
+      const res = await fetch('/logout');
       const data = await res.json();
       if(data.logout){
         const con = await checkAuth();

@@ -12,7 +12,7 @@ import {
 
 export default function Log() {
   const { homePath, checkAuth } = useGlobalContext();
-  const [ URI, setURI ] = useState(process.env.REACT_APP_LOGIN);
+  const [ URI, setURI ] = useState('/login');
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -53,7 +53,7 @@ export default function Log() {
 
   return (
     <Wrapper margin="10rem 0 4rem">
-          <H1 margin='0 0 3rem'>{URI === process.env.REACT_APP_SIGNUP?
+          <H1 margin='0 0 3rem'>{URI === '/signup'?
           "ثبت نام":"ورود"}</H1>
       <form onSubmit={submitHandler}>
         <LogDiv>
@@ -96,15 +96,15 @@ export default function Log() {
             margin="-1rem -1rem 1rem 0"
             notHover
             onClick={() => {
-              if (URI === process.env.REACT_APP_SIGNUP){
-                setURI(process.env.REACT_APP_LOGIN);
+              if (URI === '/signup'){
+                setURI('/login');
               }
               else {
-                setURI(process.env.REACT_APP_SIGNUP);
+                setURI('/signup');
               }
             }}
             >
-            {URI === process.env.REACT_APP_SIGNUP
+            {URI === '/signup'
               ? "قبلا حساب ایجاد کردم"
               : "ایجاد حساب کاربری"}
           </Button>
